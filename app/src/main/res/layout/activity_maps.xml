@@ -1,5 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="vm"
+            type="kk.ljq.hhh.clientrequest.ViewModelC"/>
+    </data>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="kk.ljq.hhh.clientrequest.MapsActivity"
@@ -11,13 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etOrigin"
-        android:hint="Enter origin address" />
+        android:hint="@string/orgin"
+        android:text="@{vm.orgin}"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter destination address"
-        android:id="@+id/etDestination" />
+        android:hint="@string/destination"
+        android:id="@+id/etDestination"
+        android:text="@{vm.destniation }"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,33 +37,35 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="send_request"
-            android:id="@+id/btnFindPath" />
+            android:text="@string/send_request"
+            android:id="@+id/btnFindPath"
+            android:onClick="@{() -> vm.sendrequest()}"
+            />
         <ImageView
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_distance"/>
         <TextView
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0 km"
+            android:text="@{vm.distance}"
             android:id="@+id/tvDistance" />
 
         <ImageView
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:padding="5dp"
             android:src="@drawable/ic_clock"/>
         <TextView
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0 min"
+            android:text="@{vm.time}"
             android:id="@+id/tvDuration" />
     </LinearLayout>
 
@@ -65,3 +77,4 @@
         android:layout_height="match_parent" />
 
 </LinearLayout>
+</layout>

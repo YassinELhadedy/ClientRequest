@@ -2,4 +2,10 @@
     <string name="app_name">ClientRequest</string>
     <string name="title_activity_maps">Map</string>
     <string name="facebook_application_id" translatable="false">711948338973822</string>
+    <string name="user_location">from here</string>
+    <string name="orgin">Enter origin address</string>
+    <string name="destination">Enter destination address</string>
+    <string name="send_request">send_request</string>
+    <string name="distance">0 km</string>
+    <string name="time">0 min</string>
 </resources>
